@@ -1,0 +1,24 @@
+<%- include('partials/head') %>
+
+    <body>
+        <%- include('partials/narbar') %>
+            <h1>Browsing the :<%= name %>
+            </h1>
+            <h2>
+                <%= description %> subreddit
+            </h2>
+            <p>
+                <%= subscribers %> Total subscribers
+            </p>
+            <hr>
+            <% for(let post of posts) {%>
+                <article>
+                    <p>
+                        <%= post.title %> - <b></b>
+                    </p>
+                    <% if(post.img) {%>
+                        <img src="<%= post.img %> " alt="">
+                        <% } %>
+                </article>
+                <% } %>
+                    <%- include('partials/footer') %>
