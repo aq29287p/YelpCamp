@@ -1,0 +1,38 @@
+body{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1487730116645-74489c95b41b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: 300;
+    overflow-x: hidden;
+
+}
+
+.cover-container {
+  max-width: 60vw;
+}
+
+.nav-link {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+.nav-link:hover {
+  color: #fff;
+  background-color: #135da8;
+  border-radius: 0.25rem;
+}
+.btn-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}

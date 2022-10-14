@@ -1,0 +1,81 @@
+#cluster-map {
+  height: 500px;
+  width: 100%;
+}
+
+#cluster-map .leaflet-marker-icon {
+  background-color: #f00;
+}
+
+#cluster-map .leaflet-marker-icon.leaflet-zoom-animated {
+  -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+  -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+  -o-transition: -o-transform 0.2s, opacity 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+#cluster-map .leaflet-marker-icon.leaflet-zoom-animated.leaflet-clickable {
+  cursor: pointer;
+}
+
+#cluster-map .leaflet-marker-icon.leaflet-zoom-animated.leaflet-clickable:hover {
+  opacity: 0.8;
+}
+
+#cluster-map .leaflet-marker-icon.leaflet-zoom-animated.leaflet-clickable:active {
+  opacity: 1;
+}
+
+#cluster-map .leaflet-marker-icon.leaflet-zoom-animated.leaflet-clickable.leaflet-interactive {
+  cursor: pointer;
+}
+
+#cluster-map .leaflet-marker-icon.leaflet-zoom-animated.leaflet-clickable.leaflet-interactive:hover {
+  opacity: 0.8;
+}
+
+#cluster-map .leaflet-marker-icon.leaflet-zoom-animated.leaflet-clickable.leaflet-interactive:active {
+  opacity: 1;
+}
+
+#map {
+  height: 500px;
+    width: 100%;
+}
+
+
+#map .leaflet-marker-icon {
+  background-color: #f00;
+}
+
+#map .leaflet-marker-icon.leaflet-zoom-animated {
+  -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+  -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+  -o-transition: -o-transform 0.2s, opacity 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+#map .leaflet-marker-icon.leaflet-zoom-animated.leaflet-clickable {
+  cursor: pointer;
+}
+
+#map .leaflet-marker-icon.leaflet-zoom-animated.leaflet-clickable:hover {
+  opacity: 0.8;
+}
+
+#map .leaflet-marker-icon.leaflet-zoom-animated.leaflet-clickable:active {
+  opacity: 1;
+}
+
+#map .leaflet-marker-icon.leaflet-zoom-animated.leaflet-clickable.leaflet-interactive {
+  cursor: pointer;
+}
+
+#map .leaflet-marker-icon.leaflet-zoom-animated.leaflet-clickable.leaflet-interactive:hover {
+  opacity: 0.8;
+}
+
+#map .leaflet-marker-icon.leaflet-zoom-animated.leaflet-clickable.leaflet-interactive:active {
+  opacity: 1;
+}
+
