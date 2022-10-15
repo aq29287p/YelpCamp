@@ -3,14 +3,14 @@
         <div class="col-6 offset-3">
             <div class="alert alert-danger" role="alert">
                 <h4 class="alert-heading">Oh snap! You got an error!</h4>
-                <p>
-                    <%= err.message %>
-                </p>
-                <hr>
+                <% if(process.env.NODE_ENV !== 'production') { %>
+                    <p><%= error.message %></p>
+                    <p><%= error.stack %></p> 
+                <% } %>
 
-                <p>
-                    <%= err.stack %>
-                </p>
+                
+                <p><%= err.message %></p>
+                
             </div>
 
         </div>
