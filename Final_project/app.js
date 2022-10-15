@@ -22,7 +22,7 @@ const reviewsRoutes = require('./routes/reviews');
 
 const MongoDBStore = require('connect-mongo');
 const helmet = require('helmet');
-const dbUrl =  'mongodb://localhost:27017/yelp-camp'; //process.env.DB_URL ||
+const dbUrl =  process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp'; //process.env.DB_URL ||
 //connect to mongoDB
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
@@ -45,9 +45,10 @@ app.use(mongoSanitize({
     replaceWith: '_'
 }));
 
+const secret = process.env.SECRET || 'thisshouldbeabettersecret!';
 const store = new MongoDBStore({
     mongoUrl: dbUrl,
-    secret: 'thisshouldbeabettersecret!',
+    secret,
     touchAfter: 24 * 60 * 60
 });
 store.on("error", function (e) {
@@ -59,7 +60,7 @@ store.on("error", function (e) {
 const sessionConfig = {
     store, 
     name: 'session',
-    secret: 'thisshouldbeabettersecret!',
+    secret,
     resave: false,
     saveUninitialized: true,
     cookie: {
