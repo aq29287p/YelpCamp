@@ -45,7 +45,7 @@ app.use(mongoSanitize({
     replaceWith: '_'
 }));
 
-const secret =  'thisshouldbeabettersecret!'; //process.env.SECRET ||
+const secret =  process.env.SECRET ||'thisshouldbeabettersecret!'; //
 const store = new MongoDBStore({
     mongoUrl: dbUrl,
     secret,
@@ -161,7 +161,7 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render('error', { err });
 });
 
-const port =  3000; //process.env.PORT ||
+const port = process.env.PORT || 3000; //
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 });

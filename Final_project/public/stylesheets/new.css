@@ -1,0 +1,16 @@
+body{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../image/newbg.jpg');
+    
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: 300;
+    overflow-x: hidden;
+    color: aliceblue;
+
+}
