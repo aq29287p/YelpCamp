@@ -1,5 +1,2 @@
-# YelpCamp
-//"scripts": {
-  // "test": "echo \"Error: no test specified\" && exit 1",
-  //  "start": "node app.js"
-  //},
+# My photo site  
+https://mighty-plateau-13686.herokuapp.com/  
