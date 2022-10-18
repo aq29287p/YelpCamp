@@ -23,7 +23,8 @@ module.exports.createCampground = async (req, res, next) => {
     camp.geometry = geoData.body.features[0].geometry;
     camp.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
     camp.author = req.user._id;
-
+    
+    camp.time = req.body.time;
     await camp.save();
 
     req.flash('success', 'Successfully made a new campground!');
@@ -54,6 +55,8 @@ module.exports.updateCampground = async (req, res) => {
     const camp = await Campground.findByIdAndUpdate(req.params.id, { ...req.body.campground });
     const imgs = req.files.map(f => ({ url: f.path, filename: f.filename }));
     camp.images.push(...imgs);
+    
+    camp.time = req.body.campground.time;
     await camp.save();
     if (req.body.deleteImages) {
         for (let filename of req.body.deleteImages) {

@@ -33,7 +33,7 @@ const { number } = require('joi');
 module.exports.campgroundSchema = joi.object({
     campground: joi.object({
         title: joi.string().required().escapeHTML(),
-        price: joi.number().required().min(0),
+        time: joi.string().required(),
         location: joi.string().required().escapeHTML(),
         description: joi.string().required().escapeHTML()
     }).required(),

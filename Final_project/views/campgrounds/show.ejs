@@ -1,9 +1,11 @@
 <% layout('layouts/boilerplate') %>
     <link rel="stylesheet" href="/stylesheets/stars.css">
 
+
+
     <div class="row">
         <div class="col-6">
-            <div id='map' ></div>
+            
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <% camp.images.forEach((img,i)=>{ %>
@@ -24,17 +26,7 @@
                     <% } %>
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
+             
             <div class="card mb-3">
 
                 <div class="card-body">
@@ -50,28 +42,31 @@
                         </small>
                     </p>
                     <p class="card-text">
-                        Summited by:
+                        Submitted by:
                         <small class="text-muted">
                             <%= camp.author.username%>
                         </small>
                     </p>
-                    <p class="card-text">
-                        <small class="text-muted">
-                            $ <%= camp.price%>/night
-                        </small>
-                    </p>
+                    <small class="text-muted">
+                        Date : <%= camp.time%>
+                    </small>
+
+                    <div>
                     <% if(currentUser && camp.author.equals(currentUser._id)){ %>
                         <a href="/campgrounds/<%=camp._id%>/edit" class="btn btn-primary">Edit</a>
                         <form action="/campgrounds/<%=camp._id%>?_method=DELETE" method="POST">
                             <button class="btn btn-danger">Delete</button>
                         </form>
                         <% } %>
-
+                    </div>
 
 
                 </div>
+
                 <div class="card-footer text-muted">
-                    <%=Math.floor(Math.random()*10+1) %> Days ago
+
+                        
+                    
                         <a href="/campgrounds">Back to campgrounds</a>
                 </div>
 
@@ -81,6 +76,7 @@
 
         </div>
         <div class="col-6">
+            <div id='map' style='width: 100%; height: 300px;'></div>
             <% if(currentUser) {%>
                 <h2>Leave a Review</h2>
                 <form action="/campgrounds/<%=camp._id%>/reviews" method="POST" class="mb-3 validated-form" novalidate>
@@ -106,7 +102,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="body">Review text</label>
-                        <textarea class="form-control" name="review[body]" id="body" cols="30" rows="10"
+                        <textarea class="form-control" name="review[body]" id="body" cols="30" rows="5"
                             required></textarea>
                         <div class="valid-feedback">
                             Looks good!
@@ -148,7 +144,8 @@
     </div>
     <script>
         const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
-        const camp = <%- JSON.stringify(camp) %>
+        const camp = <%- JSON.stringify(camp) %>;
+
     </script>
 
     <script src="/jsScript/showPageMap.js"></script>
